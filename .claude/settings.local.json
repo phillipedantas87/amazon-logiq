@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(timeout 15)",
+      "Bash(npm install *)",
+      "Bash(dir node_modules)",
+      "Bash(grep -E \"^\\(recharts|jspdf|html2canvas\\)$\")",
+      "Bash(npm list *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(curl -s -I http://localhost:5173)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5175)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

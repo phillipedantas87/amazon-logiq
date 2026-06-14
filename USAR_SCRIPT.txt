@@ -1,0 +1,100 @@
+═══════════════════════════════════════════════════════════════════════════════
+  COMO USAR O SCRIPT DE CRIAÇÃO DE EMPRESA
+═══════════════════════════════════════════════════════════════════════════════
+
+📌 QUANDO UMA NOVA EMPRESA CHEGAR:
+
+1. Abra PowerShell na pasta: C:\Users\Phillipe\OneDrive\Documentos\APP AD\
+
+2. Execute:
+   .\criar-empresa.ps1 "Nome da Empresa" "#COR1" "#COR2"
+
+═══════════════════════════════════════════════════════════════════════════════
+  EXEMPLOS
+═══════════════════════════════════════════════════════════════════════════════
+
+Exemplo 1 - ABC Corp com cores azuis:
+   .\criar-empresa.ps1 "ABC Corp" "#0066CC" "#003366"
+
+Exemplo 2 - XYZ Logistics com cores vermelhas:
+   .\criar-empresa.ps1 "XYZ Logistics" "#CC0000" "#990000"
+
+Exemplo 3 - Empresa Brasil com cores verdes:
+   .\criar-empresa.ps1 "Empresa Brasil" "#009900" "#006600"
+
+═══════════════════════════════════════════════════════════════════════════════
+  O QUE O SCRIPT FAZ
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Copia a pasta amazon-logiq-h2ol
+✅ Renomeia para amazon-logiq-{empresa}
+✅ Edita config.js automaticamente:
+   - companyName
+   - Cores primária e secundária
+   - Caminhos de logo
+   - Emails de usuários padrão
+   - Nomes dos usuários padrão
+✅ Cria pasta public/logos/
+✅ Mostra próximos passos
+
+═══════════════════════════════════════════════════════════════════════════════
+  DEPOIS DE EXECUTAR
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Coloque a logo da empresa em:
+   amazon-logiq-{empresa}\public\logos\{empresa}-logo.png
+   amazon-logiq-{empresa}\public\logos\{empresa}-favicon.ico
+
+2. Teste localmente:
+   cd amazon-logiq-{empresa}
+   npm install
+   npm run dev
+
+3. Acesse: http://localhost:5173
+
+4. Quando estiver pronto, faça deploy:
+   vercel
+
+   Ou em seu próprio servidor.
+
+═══════════════════════════════════════════════════════════════════════════════
+  CORES (DICAS)
+═══════════════════════════════════════════════════════════════════════════════
+
+Encontre cores em: https://coolors.co
+
+Exemplos:
+  - Azul:     #0066CC (primária), #003366 (secundária)
+  - Vermelho: #CC0000 (primária), #990000 (secundária)
+  - Verde:    #009900 (primária), #006600 (secundária)
+  - Roxo:     #663399 (primária), #331166 (secundária)
+  - Laranja:  #FF9900 (primária), #FF6B35 (secundária) [padrão H2OL]
+
+═══════════════════════════════════════════════════════════════════════════════
+  TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ "Pasta já existe"
+   → A empresa já foi criada. Use pasta existente ou renomeie.
+
+❌ "Pasta template não encontrada"
+   → amazon-logiq-h2ol não existe. Certifique que está no mesmo diretório.
+
+❌ "Erro ao executar script"
+   → Abra PowerShell como ADMIN
+   → Execute: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+═══════════════════════════════════════════════════════════════════════════════
+  ESTRUTURA APÓS EXECUTAR
+═══════════════════════════════════════════════════════════════════════════════
+
+Projetos/
+├── amazon-logiq-h2ol/          ← Original
+├── amazon-logiq-abc/           ← Nova empresa criada
+│   ├── config.js (automático)
+│   ├── public/logos/
+│   │   ├── abc-logo.png        ← Você coloca a logo aqui
+│   │   └── abc-favicon.ico     ← Você coloca o favicon aqui
+│   └── ...
+
+═══════════════════════════════════════════════════════════════════════════════
